@@ -4,9 +4,16 @@
     line-height: 8vh;
     text-align: center;
 }
+#successMsg{
+    visibility: hidden;
+    position: absolute;
+    bottom: 0px;
+    left: 25%;
+    width: 50%;
+}
 #content{
     background-color: #d6e0f0 !important;
-    margin-top:2vh;
+    margin-top:5vh;
     min-height: 50vh;
 }
 .navBtn{
