@@ -1,6 +1,6 @@
 <?php
-require './database/Router.php';
-require './database/Request.php';
+require './vendor/autoload.php';
+
 
 require Router::redirect(Request::getUri());
 
