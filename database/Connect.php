@@ -9,6 +9,9 @@ class Connect
             die($e->getMessage());
         }
     }
+    public static function makeQuery($query,$atributes){
+
+    }
 }
 
 ?>

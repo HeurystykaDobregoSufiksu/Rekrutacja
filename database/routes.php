@@ -1,6 +1,7 @@
 <?php
 return $routes=[
-    'login' => 'login.php',
+    'panel' => ('./controllers/PanelController.php'),
+    'article/show' => ('./controllers/ArticleController.php'),
     '' => 'index2.php'
 ]
 ?>

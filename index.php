@@ -1,8 +1,8 @@
 <?php
 require './database/Router.php';
+require './database/Request.php';
 
-$uri=trim($_SERVER['REQUEST_URI'],'/');
-require Router::redirect($uri);
+require Router::redirect(Request::getUri());
 
 ?>
 
