@@ -23,13 +23,7 @@
                 <p class="col navBtn">Odrzucone</p>
             </div>
         </div>
-        <div class="col-md-5">
-            <div class="row">
-                <input type="text" class="form-control col-md-5" id="search" placeholder="podaj tytuł artykułu">
-                <button type="submit" class="btn btn-primary col-md-2"id="searchBtn">wyszukaj</button>
-            </div>
 
-        </div>
     </div>
     <div class="col-md-8 offset-2" id="content">
         <table class="table">
