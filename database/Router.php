@@ -1,12 +1,54 @@
 <?php
+require './controllers/PanelController.php';
 class Router
 {
-    public static function redirect($uri){
-        $routes= require('routes.php');
-        if(array_key_exists($uri,$routes)){
-            return $routes[$uri];
-        }else{
-            return $routes[''];
+
+    public array $routes = [
+        'GET' => [],
+        'POST' => [],
+        'PUT' => [],
+        'DELETE' => []
+
+    ];
+    public static function load($file){
+        $router=new static;
+        require $file;
+        return $router;
+    }
+    public function redirect($uri, $method){
+        if(array_key_exists($uri,$this->routes[$method])) {
+            return $this->getAction(explode('@', $this->routes[$method][$uri]));
         }
+        throw new Exception("Undefined URI");
+
+    }
+    protected function getAction($reaquest){
+        $controller=explode('/',$reaquest[0])[2];
+        $action=$reaquest[1];
+        switch ($controller){
+            case "PanelController":
+                $newController=new PanelController();
+                break;
+            default:
+                return '';
+        }
+        if(!method_exists($newController,$action)){
+            throw new Exception("Specified method doesnt exist in controller");
+        }
+        return $newController->$action();
+
+    }
+
+    public function get($uri, $controller){
+        $this->routes['GET'][$uri]=$controller;
+    }
+    public function post($uri, $controller){
+        $this->routes['POST'][$uri]=$controller;
+    }
+    public function put($uri, $controller){
+        $this->routes['PUT'][$uri]=$controller;
+    }
+    public function delete($uri, $controller){
+        $this->routes['DELETE'][$uri]=$controller;
     }
 }

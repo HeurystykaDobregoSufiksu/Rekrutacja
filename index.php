@@ -1,18 +1,11 @@
 <?php
 require './vendor/autoload.php';
+require './database/bootstrap.php';
 
-
-require Router::redirect(Request::getUri());
-
+try {
+    Router::load('routes.php')->redirect(Request::getUri(), Request::getMethod());
+} catch (Exception $e) {
+    var_dump($e);
+}
 ?>
 
-/*require_once('./database/connect.php');
-$db = Connect::create();
-require_once('./models/Category.php');
-$st=$db->prepare('select * from category');
-$st->execute();
-$all=$st->fetchAll(PDO::FETCH_CLASS,'Category');
-var_dump($st->fetchAll(PDO::FETCH_CLASS,'Category'));
-var_dump($all[0]->getName());
-
-?>*/

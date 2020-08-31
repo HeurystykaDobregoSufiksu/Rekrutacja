@@ -1,16 +1,14 @@
 <?php
-require_once('config.php');
+
 class Connect
 {
-    public static function create(){
+    public static function create($config){
+
         try{
-            return new PDO('mysql:host='.host.';dbname='.dbname,username,"");
+            return new PDO('mysql:host='.$config['host'].';dbname='.$config['dbname'],$config['username'],"");
         }catch (PDOException $e){
             die($e->getMessage());
         }
-    }
-    public static function makeQuery($query,$atributes){
-
     }
 }
 

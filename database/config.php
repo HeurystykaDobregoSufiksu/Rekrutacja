@@ -1,6 +1,7 @@
 <?php
-const host='127.0.0.1';
-const dbname='articlemanager2';
-const username='root';
-
+return $connectInfo=[
+    'host'=>'127.0.0.1',
+    'dbname'=>'articlemanager2',
+    'username'=>'root'
+];
 ?>
