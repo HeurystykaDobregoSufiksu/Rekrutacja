@@ -18,12 +18,11 @@
         <div class="col-md-7">
             <div class="row">
                 <p class="col-md-4" id="logo">Panel administracyjny</p>
-                <p class="col navBtn">Wszystkie</p>
-                <p class="col navBtn">Zatwierdzone</p>
-                <p class="col navBtn">Odrzucone</p>
+                <p class="col navBtn">artykuly</p>
+                <p class="col navBtn">kategorie</p>
+
             </div>
         </div>
-
     </div>
     <div class="col-md-8 offset-2" id="content">
         <table class="table">

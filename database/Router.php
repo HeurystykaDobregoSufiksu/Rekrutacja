@@ -1,5 +1,5 @@
 <?php
-require './controllers/PanelController.php';
+
 class Router
 {
 
@@ -26,8 +26,8 @@ class Router
         $controller=explode('/',$reaquest[0])[2];
         $action=$reaquest[1];
         switch ($controller){
-            case "PanelController":
-                $newController=new PanelController();
+            case "ArticleController":
+                $newController=new ArticleController();
                 break;
             default:
                 return '';
@@ -35,6 +35,7 @@ class Router
         if(!method_exists($newController,$action)){
             throw new Exception("Specified method doesnt exist in controller");
         }
+
         return $newController->$action();
 
     }

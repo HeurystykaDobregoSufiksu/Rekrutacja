@@ -7,10 +7,14 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App' => $baseDir . '/database/App.php',
+    'Article' => $baseDir . '/models/Article.php',
     'ArticleController' => $baseDir . '/controllers/ArticleController.php',
+    'ArticleRepository' => $baseDir . '/repositories/ArticleRepository.php',
+    'ArticleService' => $baseDir . '/services/ArticleService.php',
     'Category' => $baseDir . '/models/Category.php',
     'CategoryController' => $baseDir . '/controllers/CategoryController.php',
     'CategoryRepository' => $baseDir . '/repositories/CategoryRepository.php',
+    'CategoryService' => $baseDir . '/services/CategoryService.php',
     'ComposerAutoloaderInit573e4b3125c6bb81dea08a4b45f27c9a' => $vendorDir . '/composer/autoload_real.php',
     'Composer\\Autoload\\ClassLoader' => $vendorDir . '/composer/ClassLoader.php',
     'Composer\\Autoload\\ComposerStaticInit573e4b3125c6bb81dea08a4b45f27c9a' => $vendorDir . '/composer/autoload_static.php',
@@ -19,6 +23,8 @@ return array(
     'QueryMaker' => $baseDir . '/database/QueryMaker.php',
     'Request' => $baseDir . '/database/Request.php',
     'Router' => $baseDir . '/database/Router.php',
-    'User' => $baseDir . '/User.php',
+    'User' => $baseDir . '/models/User.php',
     'UserController' => $baseDir . '/controllers/UserController.php',
+    'UserRepository' => $baseDir . '/repositories/UserRepository.php',
+    'UserService' => $baseDir . '/services/UserService.php',
 );
