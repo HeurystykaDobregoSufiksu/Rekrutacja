@@ -20,19 +20,15 @@
                 <p class="col-md-4" id="logo">Panel administracyjny</p>
                 <p class="col navBtn">artykuly</p>
                 <p class="col navBtn">kategorie</p>
+                <button type="button" id="dodajArt"  class="btn btn-primary" data-toggle="modal" data-target="#dodajArtykul">
+                    Dodaj artykuł
+                </button>
+                <button type="button" id="dodajKat"  class="btn btn-primary" data-toggle="modal" data-target="#dodajKategorie">
+                    Dodaj kategorie
+                </button>
 
             </div>
         </div>
     </div>
     <div class="col-md-8 offset-2" id="content">
-        <table class="table">
-            <thead>
-            <tr>
-                <th style="max-width:10%" scope="col">#</th>
-                <th style="max-width:30%"scope="col">Tytuł</th>
-                <th style="max-width:40%"scope="col">Opis</th>
-                <th style="max-width:10%"scope="col">Status</th>
-                <th style="max-width:10%"scope="col">Akcje</th>
-            </tr>
-            </thead>
-            <tbody>
+

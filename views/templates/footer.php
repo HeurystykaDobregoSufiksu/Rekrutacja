@@ -1,6 +1,5 @@
 
-            </tbody>
-        </table>
+
     </div>
 
 </div>
@@ -13,6 +12,6 @@
 </div>
 </body>
 </html>
-<?php if(isset($_SESSION['errormsg'])){?>
-    <script> message("<?=$_SESSION['errormsg']?>"); </script>
-<?php unset($_SESSION['errormsg']); }?>
+<?php if(isset($_SESSION['msg'])){?>
+    <script> message("<?=$_SESSION['msg']?>"); </script>
+<?php unset($_SESSION['msg']); }?>

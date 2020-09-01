@@ -18,12 +18,11 @@ class ArticleController
     public function selectOne(){
         if(isset($_GET['id'])){
             $article=$this->articleService->selectOne($_GET['id']);
-            return view('panel', [
+            return view('article',  [
                 'articles'=>$article
             ]);
         }else{
-            $_SESSION['errormsg']="brak artykułu o podanym ID";
-            $this->show();
+            $this->callback("Brak id");
         }
     }
     public function addArticle(){
@@ -37,23 +36,19 @@ class ArticleController
     }
     public function editArticle(){
         $this->articleService->editArticle([
+            'id'=>$_POST['id'],
             'title'=>$_POST['title'],
             'content'=>$_POST['content'],
-            'author'=>$_POST['author'],
             'category'=>$_POST['category'],
             'status'=>$_POST['status']
         ]);
     }
     public function removeArticle(){
-        if(isset($_GET['id'])){
-            $this->articleService->removeArticle(isset($_GET['id']));
-        }else{
-            $_SESSION['errormsg']="ID nie zostało ustawione";
-            $this->errorHandler();
-        }
+            $this->articleService->removeArticle($_POST['id']);
     }
-    public function errorHandler($msg){
-        $_SESSION['errormsg']=$msg;
-        return view('panel');
+
+    public function callback($msg=""){
+        $_SESSION['msg']=$msg;
+        header("Location: /");
     }
 }

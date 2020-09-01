@@ -13,8 +13,6 @@ class ArticleService
     public function selectAll(){
         if($data=$this->articleRepository->getAllArticles()){
             return $data;
-        }else{
-            return $this->listener->errorHandler("Blad podczas pobierania artykułów");
         }
 
     }
@@ -24,26 +22,44 @@ class ArticleService
         ) {
             return $data;
         }else {
-            return $this->listener->errorHandler("Blad podczas pobierania artykułu");
+            $this->listener->callback("Blad podczas pobierania artykułu");
         }
+
     }
     public function addArticle(array $data){
         if($this->validateData($data)){
-            $this->articleRepository->addArticle($this->checkInputs($data));
+            if($this->articleRepository->addArticle($this->checkInputs($data))){
+                $this->listener->callback("Artykuł dodany pomyślnie");
+            }else{
+                $this->listener->callback("Blad podczas dodawania artykulu");
+            }
         }
     }
 
     public function editArticle(array $data){
-        $this->articleRepository->editArticle($this->checkInputs($data));
+
+        if($this->articleRepository->editArticle($this->checkInputs($data))){
+            $this->listener->callback("Dane zostały zmodyfikowane pomyślnie");
+        }else{
+            $this->listener->callback("Blad podczas edycji artykulu");
+        }
     }
 
     public function removeArticle($id){
-        $this->articleRepository->removeArticle($this->checkInputs($id));
+        if($this->articleRepository->removeArticle($id)){
+            $this->listener->callback("Usunięto pomyślnie");
+        }else{
+            $this->listener->callback("Blad podczas usuwania artykulu");
+        }
+
     }
 
     public function checkInputs(array $data){
         $data['title']=filter_var($data['title'], FILTER_SANITIZE_STRING);
         $data['content']=filter_var($data['content'], FILTER_SANITIZE_STRING);
+        $data['category']= (int)$data['category'];
+        if(isset($data['author'])){$data['author']= (int)$data['author'];}
+        if(isset($data['id'])){$data['id']=(int)$data['id'];}
         return $data;
     }
     public function validateData(array $data){
