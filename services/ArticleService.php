@@ -4,23 +4,21 @@
 class ArticleService
 {
     protected $articleRepository;
+    protected $categoryService;
     protected $listener;
-    public function __construct(ArticleController $listener)
+    public function __construct( $listener)
     {
         $this->listener=$listener;
         $this->articleRepository=new ArticleRepository();
     }
     public function selectAll(){
-        if($data=$this->articleRepository->getAllArticles()){
-            return $data;
-        }
+        return $this->articleRepository->getAllArticles();
 
     }
     public function selectOne($id){
-        if(filter_var($id, FILTER_VALIDATE_INT) &&
-            $data=$this->articleRepository->getArticleOfId($id)
-        ) {
-            return $data;
+
+        if(filter_var($id, FILTER_VALIDATE_INT)) {
+            return $this->articleRepository->getArticleOfId($id);
         }else {
             $this->listener->callback("Blad podczas pobierania artykułu");
         }
@@ -33,6 +31,8 @@ class ArticleService
             }else{
                 $this->listener->callback("Blad podczas dodawania artykulu");
             }
+        }else{
+            $this->listener->callback("Niepoprawne dane");
         }
     }
 

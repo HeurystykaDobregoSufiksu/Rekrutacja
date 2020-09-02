@@ -12,6 +12,7 @@ class ComposerStaticInit573e4b3125c6bb81dea08a4b45f27c9a
         'ArticleController' => __DIR__ . '/../..' . '/controllers/ArticleController.php',
         'ArticleRepository' => __DIR__ . '/../..' . '/repositories/ArticleRepository.php',
         'ArticleService' => __DIR__ . '/../..' . '/services/ArticleService.php',
+        'AuthController' => __DIR__ . '/../..' . '/controllers/AuthController.php',
         'Category' => __DIR__ . '/../..' . '/models/Category.php',
         'CategoryController' => __DIR__ . '/../..' . '/controllers/CategoryController.php',
         'CategoryRepository' => __DIR__ . '/../..' . '/repositories/CategoryRepository.php',

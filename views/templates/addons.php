@@ -15,8 +15,9 @@
               <textarea class="form-control" name="content" rows="5" placeholder="Treść"></textarea>
               <input class="form-control" type="number" name="author" placeholder="Default input">
               <select name="category" class="form-control">
-                  <option disabled>Wybierz kategorie</option>
-                  <option value="4">Dobra kategoria</option>
+                  <?php foreach ($categories as $category){?>
+                      <option value="<?=$category->getID();?>"><?=$category->getCategory()?></option>
+                  <?php } ?>
               </select>
               <select name="status" class="form-control">
                   <option disabled>Wybierz status</option>

@@ -10,10 +10,11 @@ if(!isset($articles)){ ?>
     <form action='/article/update' method="POST">
     <input class="form-control" type="text" name="title" value="<?=$articles[0]['title']?>">
     <textarea class="form-control" name="content" rows="5"><?=$articles[0]['content']?></textarea>
-    <input class="form-control" type="number" name="author" placeholder="Default input">
+    <input class="form-control" type="number" value="1" name="author" placeholder="Default input">
     <select name="category" class="form-control">
-        <option disabled>Wybierz kategorie</option>
-        <option value="4">Dobra kategoria</option>
+        <?php foreach ($categories as $category){?>
+            <option value="<?=$category->getID();?>"><?=$category->getCategory()?></option>
+        <?php } ?>
     </select>
     <select name="status" class="form-control">
         <option disabled>Wybierz status</option>
@@ -26,3 +27,4 @@ if(!isset($articles)){ ?>
 
 <?php include_once 'templates/footer.php'?>
 <?php include_once 'templates/addons.php'?>
+<?php include_once 'templates/messanger.php'?>

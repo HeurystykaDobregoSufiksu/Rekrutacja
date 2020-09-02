@@ -18,8 +18,8 @@
         <div class="col-md-7">
             <div class="row">
                 <p class="col-md-4" id="logo">Panel administracyjny</p>
-                <p class="col navBtn">artykuly</p>
-                <p class="col navBtn">kategorie</p>
+                <p class="col navBtn"><a href="/">Artykuly</a></p>
+                <p class="col navBtn"><a href="/categories">Kategorie</a></p>
                 <button type="button" id="dodajArt"  class="btn btn-primary" data-toggle="modal" data-target="#dodajArtykul">
                     Dodaj artykuł
                 </button>

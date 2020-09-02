@@ -11,7 +11,6 @@
         </thead>
         <tbody>
 <?php
-
 if(!isset($articles)){ ?>
     <h2 style="text-align: center">Brak pasujących rekordów</h2>
 <?php }else { foreach ($articles as $article){?>
@@ -30,3 +29,4 @@ if(!isset($articles)){ ?>
     </table>
 <?php include_once 'templates/footer.php'?>
 <?php include_once 'templates/addons.php'?>
+<?php include_once 'templates/messanger.php'?>

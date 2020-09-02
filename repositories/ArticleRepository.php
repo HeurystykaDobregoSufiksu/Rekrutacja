@@ -15,7 +15,7 @@ class ArticleRepository
 
     }
     public function getArticleOfId($id){
-        $query=$this->db->prepare('SELECT article.ID,article.title,article.status,category.category, user.name, article.content FROM article INNER JOIN user ON article.author=user.ID INNER JOIN category ON article.category=category.ID WHERE article.ID='.$id);
+        $query=$this->db->prepare('SELECT article.ID,article.title,article.status,article.content FROM article WHERE article.ID='.$id);
         $query->execute();
         return $query->fetchAll(PDO::FETCH_ASSOC);
 

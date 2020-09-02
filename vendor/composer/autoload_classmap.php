@@ -11,6 +11,7 @@ return array(
     'ArticleController' => $baseDir . '/controllers/ArticleController.php',
     'ArticleRepository' => $baseDir . '/repositories/ArticleRepository.php',
     'ArticleService' => $baseDir . '/services/ArticleService.php',
+    'AuthController' => $baseDir . '/controllers/AuthController.php',
     'Category' => $baseDir . '/models/Category.php',
     'CategoryController' => $baseDir . '/controllers/CategoryController.php',
     'CategoryRepository' => $baseDir . '/repositories/CategoryRepository.php',

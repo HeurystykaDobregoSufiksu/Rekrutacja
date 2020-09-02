@@ -1,17 +1,35 @@
 <?php
-class UserController
+class UserController extends AuthController
 {
-    function addCategory(){
+    private $userService;
+    public function __construct()
+    {
+        parent::__construct();
+        $this->userService=new UserService($this);
+    }
+    function loginForm(){
+
+        return view('login',[]);
+    }
+
+    function register(){
+        $this->userService->registerUser([
+            'login'=>$_POST['login'],
+            'password'=>$_POST['password'],
+            'email'=>$_POST['email']
+        ]);
 
     }
-    function sanitazeDescription($name){
-
+    function login(){
+        $this->userService->login([
+            'login'=>$_POST['login'],
+            'password'=>$_POST['password']
+        ]);
     }
-    function sanitazeName($name){
 
-    }
-    function checkIfExists($name){
-
+    public function callback($msg=""){
+        $_SESSION['msg']=$msg;
+        header("Location: /");
     }
 
 }
