@@ -6,7 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'App' => $baseDir . '/database/App.php',
+    'App' => $baseDir . '/app/App.php',
     'Article' => $baseDir . '/models/Article.php',
     'ArticleController' => $baseDir . '/controllers/ArticleController.php',
     'ArticleRepository' => $baseDir . '/repositories/ArticleRepository.php',
@@ -22,8 +22,8 @@ return array(
     'Connect' => $baseDir . '/database/Connect.php',
     'PanelController' => $baseDir . '/controllers/PanelController.php',
     'QueryMaker' => $baseDir . '/database/QueryMaker.php',
-    'Request' => $baseDir . '/database/Request.php',
-    'Router' => $baseDir . '/database/Router.php',
+    'Request' => $baseDir . '/app/Request.php',
+    'Router' => $baseDir . '/app/Router.php',
     'User' => $baseDir . '/models/User.php',
     'UserController' => $baseDir . '/controllers/UserController.php',
     'UserRepository' => $baseDir . '/repositories/UserRepository.php',

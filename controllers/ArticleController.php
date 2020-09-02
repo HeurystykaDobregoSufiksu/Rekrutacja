@@ -16,7 +16,7 @@ class ArticleController extends  AuthController
         $this->articleService->addArticle([
                 'title'=>$_POST['title'],
                 'content'=>$_POST['content'],
-                'author'=>$_POST['author'],
+                'author'=>intval(unserialize($_SESSION['user'])->getId()),
                 'category'=>$_POST['category'],
                 'status'=>$_POST['status']
             ]);

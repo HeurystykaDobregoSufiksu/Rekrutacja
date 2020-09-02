@@ -14,6 +14,7 @@ class PanelController extends AuthController
     }
     public function ArticlesAndCategories(){
         $this->isLoggedin();
+
         return view('panel', [
             'articles'=>$this->articleService->selectAll(),
             'categories'=>$this->categoryService->selectAll()

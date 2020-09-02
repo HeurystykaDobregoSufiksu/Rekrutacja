@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-App::set('config', require 'config.php');
+App::set('config', require './database/config.php');
 
 App::set('database', new QueryMaker(Connect::create(App::get('config'))));
 

@@ -27,7 +27,7 @@ class UserService
         if($result=$this->userRepository->login($userData)){
 
             if (password_verify($userData['password'], $result[0]['password'])) {
-                $_SESSION['user']=serialize(new User($result[0]['name'],$result[0]['email'],$result[0]['status']));
+                $_SESSION['user']=serialize(new User($result[0]['name'],$result[0]['email'],$result[0]['status'],$result[0]['ID']));
 
                 $this->listener->callback("Pomyslnie zalogowano");
             } else {

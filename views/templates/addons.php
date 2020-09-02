@@ -13,7 +13,6 @@
           <form action='/article/add' method="POST">
               <input class="form-control" type="text" name="title" placeholder="Tytuł">
               <textarea class="form-control" name="content" rows="5" placeholder="Treść"></textarea>
-              <input class="form-control" type="number" name="author" placeholder="Default input">
               <select name="category" class="form-control">
                   <?php foreach ($categories as $category){?>
                       <option value="<?=$category->getID();?>"><?=$category->getCategory()?></option>

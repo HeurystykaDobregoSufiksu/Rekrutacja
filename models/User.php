@@ -6,7 +6,23 @@ class User
     private $name;
     private $email;
     private $status;
+    private $id;
 
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
     /**
      * @return mixed
      */
@@ -61,8 +77,9 @@ class User
      * @param $email
      * @param $status
      */
-    public function __construct($name, $email, $status)
+    public function __construct($name, $email, $status,$id)
     {
+        $this->id=$id;
         $this->name = $name;
         $this->email = $email;
         $this->status = $status;

@@ -7,7 +7,7 @@ namespace Composer\Autoload;
 class ComposerStaticInit573e4b3125c6bb81dea08a4b45f27c9a
 {
     public static $classMap = array (
-        'App' => __DIR__ . '/../..' . '/database/App.php',
+        'App' => __DIR__ . '/../..' . '/app/App.php',
         'Article' => __DIR__ . '/../..' . '/models/Article.php',
         'ArticleController' => __DIR__ . '/../..' . '/controllers/ArticleController.php',
         'ArticleRepository' => __DIR__ . '/../..' . '/repositories/ArticleRepository.php',
@@ -23,8 +23,8 @@ class ComposerStaticInit573e4b3125c6bb81dea08a4b45f27c9a
         'Connect' => __DIR__ . '/../..' . '/database/Connect.php',
         'PanelController' => __DIR__ . '/../..' . '/controllers/PanelController.php',
         'QueryMaker' => __DIR__ . '/../..' . '/database/QueryMaker.php',
-        'Request' => __DIR__ . '/../..' . '/database/Request.php',
-        'Router' => __DIR__ . '/../..' . '/database/Router.php',
+        'Request' => __DIR__ . '/../..' . '/app/Request.php',
+        'Router' => __DIR__ . '/../..' . '/app/Router.php',
         'User' => __DIR__ . '/../..' . '/models/User.php',
         'UserController' => __DIR__ . '/../..' . '/controllers/UserController.php',
         'UserRepository' => __DIR__ . '/../..' . '/repositories/UserRepository.php',
