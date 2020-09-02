@@ -41,14 +41,13 @@ class CategoryService
     }
     public function isValid(Category $categoryObject){
         $bool=true;
+
         if(!strlen($categoryObject->getCategory())>0) {
             $bool = false;
         }
         if(!strlen($categoryObject->getDescription())>0) {
             $bool = false;
         }
-
-
         return $bool;
     }
 

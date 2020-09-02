@@ -5,6 +5,7 @@ class UserController extends AuthController
     public function __construct()
     {
         parent::__construct();
+
         $this->userService=new UserService($this);
     }
     function loginForm(){

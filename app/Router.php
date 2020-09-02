@@ -2,7 +2,6 @@
 
 class Router
 {
-
     public array $routes = [
         'GET' => [],
         'POST' => [],
@@ -10,20 +9,21 @@ class Router
         'DELETE' => []
 
     ];
+
     public static function load($file){
         $router=new static;
         require $file;
         return $router;
     }
+
     public function redirect($uri, $method){
         if(array_key_exists($uri,$this->routes[$method])) {
             return $this->getAction(explode('@', $this->routes[$method][$uri]));
         }else{
             throw new Exception("Undefined URI");
         }
-
-
     }
+
     protected function getAction($reaquest){
         $controller=explode('/',$reaquest[0])[2];
         $action=$reaquest[1];
@@ -47,9 +47,7 @@ class Router
         if(!method_exists($newController,$action)){
             throw new Exception("Specified method doesnt exist in controller");
         }
-
         return $newController->$action();
-
     }
 
     public function get($uri, $controller){

@@ -21,7 +21,6 @@ return array(
     'Composer\\Autoload\\ComposerStaticInit573e4b3125c6bb81dea08a4b45f27c9a' => $vendorDir . '/composer/autoload_static.php',
     'Connect' => $baseDir . '/database/Connect.php',
     'PanelController' => $baseDir . '/controllers/PanelController.php',
-    'QueryMaker' => $baseDir . '/database/QueryMaker.php',
     'Request' => $baseDir . '/app/Request.php',
     'Router' => $baseDir . '/app/Router.php',
     'User' => $baseDir . '/models/User.php',

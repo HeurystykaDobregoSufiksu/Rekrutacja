@@ -22,7 +22,6 @@ class ComposerStaticInit573e4b3125c6bb81dea08a4b45f27c9a
         'Composer\\Autoload\\ComposerStaticInit573e4b3125c6bb81dea08a4b45f27c9a' => __DIR__ . '/..' . '/composer/autoload_static.php',
         'Connect' => __DIR__ . '/../..' . '/database/Connect.php',
         'PanelController' => __DIR__ . '/../..' . '/controllers/PanelController.php',
-        'QueryMaker' => __DIR__ . '/../..' . '/database/QueryMaker.php',
         'Request' => __DIR__ . '/../..' . '/app/Request.php',
         'Router' => __DIR__ . '/../..' . '/app/Router.php',
         'User' => __DIR__ . '/../..' . '/models/User.php',

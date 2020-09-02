@@ -10,9 +10,7 @@ class ArticleController extends  AuthController
         $this->articleService=new ArticleService($this);
     }
 
-
     public function addArticle(){
-        $this->isLoggedin();
         $this->articleService->addArticle([
                 'title'=>$_POST['title'],
                 'content'=>$_POST['content'],
@@ -21,8 +19,8 @@ class ArticleController extends  AuthController
                 'status'=>$_POST['status']
             ]);
     }
+
     public function editArticle(){
-        $this->isLoggedin();
         $this->articleService->editArticle([
             'id'=>$_POST['id'],
             'title'=>$_POST['title'],
@@ -31,8 +29,8 @@ class ArticleController extends  AuthController
             'status'=>$_POST['status']
         ]);
     }
+
     public function removeArticle(){
-            $this->isLoggedin();
             $this->articleService->removeArticle($_POST['id']);
     }
 
