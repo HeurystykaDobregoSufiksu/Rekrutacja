@@ -10,7 +10,11 @@ class UserController extends AuthController
     }
     function loginForm(){
 
-        return view('login',[]);
+        if(!$this->isLoggedin()){
+            return view('login',[]);
+        }else{
+            header('location: /');
+        }
     }
 
     function register(){

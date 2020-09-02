@@ -7,6 +7,7 @@ class ArticleController extends  AuthController
     public function __construct()
     {
         parent::__construct();
+        $this->isLoggedin();
         $this->articleService=new ArticleService($this);
     }
 

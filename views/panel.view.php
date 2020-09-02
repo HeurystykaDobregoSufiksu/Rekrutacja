@@ -5,6 +5,7 @@
             <th style="max-width:10%" scope="col">#</th>
             <th style="max-width:30%"scope="col">Tytuł</th>
             <th style="max-width:40%"scope="col">Opis</th>
+            <th style="max-width:40%"scope="col">Kategoria</th>
             <th style="max-width:40%"scope="col">Autor</th>
             <th style="max-width:10%"scope="col">Status</th>
             <th style="max-width:10%"scope="col">Akcje</th>
@@ -19,6 +20,7 @@ if(!isset($articles)){ ?>
         <th scope="row"><?=$article['ID']?></th>
         <td><?=$article['title']?> </td>
         <td><?=$article['content']?> </td>
+        <td><?=$article['category']?> </td>
         <td><?=$article['name']?> </td>
         <td><?=$article['status']?> </td>
 
