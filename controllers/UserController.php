@@ -9,12 +9,7 @@ class UserController extends AuthController
         $this->userService=new UserService($this);
     }
     function loginForm(){
-
-        if(!$this->isLoggedin()){
-            return view('login',[]);
-        }else{
-            header('location: /');
-        }
+        return view('login',[]);
     }
 
     function register(){
